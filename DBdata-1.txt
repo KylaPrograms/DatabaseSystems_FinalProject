@@ -1,0 +1,225 @@
+SET QUOTED_IDENTIFIER OFF;
+
+INSERT INTO VideoGame (ASIN, Title, ReleaseDate, Summary, AgeSuggestion)
+VALUES
+	("B00140P9BA", "Mass Effect", "2007-11-20", "As Commander Shepard, you lead an elite squad on a heroic, action-packed adventure throughout the galaxy. Discover the imminent danger from an ancient threat and battle the traitorous Saren and his deadly army to save civilization. The fate of all life depends on your actions!", 18),
+	("B0010EK3SE", "Assassin's Creed", "2007-11-13", "You are an Assassin, a warrior shrouded in secrecy and feared for your ruthlessness. Your actions can throw your immediate environment into chaos, and your existence will shape events during this pivotal moment in history.", 18),
+	("B00W24MHSA", "I Am Bread", "2015-04-09", NULL, 7),
+	("B01MU0ALK9", "Stardew Valley", "2016-02-26", NULL, 7),
+	("B0012AJ2KL", "Tiny Bubbles", NULL, "Master surface-tension and pressure in this innovative organic puzzle game about playing with clusters of realistic soap bubbles in a microscopic aquatic world.", NULL),
+	("B0079NGSDO", "Assassin's Creed III", "2012-11-20", "The American Colonies, 1775. As a Native American assassin fights to protect his land and people, he will ignite the flames of a young nation's revolution.", 18),
+	("B00OAPODFY", "Assassin's Creed Rogue", "2015-03-09", "Introducing Assassin's Creed Rogue, the darkest chapter in the Assassin's Creed franchise yet. As Shay, you will experience the slow transformation from Assassin to Assassin Hunter.", 18),
+	("B00BMFIXZG", "Assassin's Creed IV Black Flag", "2013-11-19", "The year is 1715. Pirates rule the Caribbean and have established their own lawless Republic where corruption, greediness and cruelty are commonplace. Among these outlaws is a brash young captain named Edward Kenway.", 18),
+	("B0721NLC9L", "Assassin's Creed Origins", "2017-10-26", "ASSASSIN'S CREED ORIGINS IS A NEW BEGINNING Ancient Egypt, a land of majesty and intrigue, is disappearing in a ruthless fight for power.", 18),
+	("B003L8DXS4", "Assassin's Creed Brotherhood", "2011-03-22", NULL, 18),
+	("B001TOQ8R0", "Assassin's Creed II", "2010-03-09", "An epic story of family, vengeance and conspiracy set in the pristine, yet brutal, backdrop of a Renaissance Italy. New low price!", 18),
+	("B002I0IHIM", "Assassin's Creed Revelations", "2011-11-29", "Ezio Auditore walks in the footsteps of the legendary mentor Altair, on a dangerous journey of discovery and revelation.", 18),
+	("B001VJ4DHK", "Mass Effect 2", "2010-01-26", "Recruit. Explore. Control.Two years after Commander Shepard repelled invading Reapers bent on the destruction of organic life, a mysterious new enemy has emerged. On the fringes of known space, something is silently abducting entire human colonies.", 18),
+	("B004FYKWZU", "Mass Effect 3", "2012-03-06", "Earth is burning. The Reapers have taken over and other civilizations are falling like dominoes. Lead the final fight to save humanity and take back Earth from these terrifying machines, Commander Shepard. You'll need backup for these battles. Fortunately, the galaxy has a habit of sending unexpected species your way. Recruit team members and forge new alliances, but be prepared to say goodbye at any time as partners make the ultimate sacrifice. It's time for Commander Shepard to fight for the fate of the human race and save the galaxy. No pressure, Commander.", 18),
+	("B00ZPZQKIG", "Mass Effect: Andromeda", "2017-03-20", "Mass Effect: Andromeda takes you to the Andromeda galaxy, far beyond the Milky Way. There, you'll lead our fight for a new home in hostile territory - where WE are the aliens. Play as the Pathfinder - a leader of a squad of military-trained explorers - with deep progression and customization systems. This is the story of humanity's next chapter, and your choices throughout the game will ultimately determine our survival in the Andromeda Galaxy. As you unfold the mysteries of the Andromeda Galaxy and the hope for humanity lies on your shoulders – You must ask yourself… How far will you go?", 18),
+	("B00000K4MC", "RollerCoaster Tycoon", "1999-03-31", "Take a trip to fame and fortune by building the biggest, best, scariest, and most thrilling rides ever seen in any theme park. Can you make money in this volatile business? Can you become the ultimate Roller Coaster Tycoon?", 3),
+	("B01302P4MA", "Solar 2", "2011-06-17", "Dynamic abstract sandbox universe. Changes and evolves as you do.", NULL),
+	("B073TWYRZQ", "Overcooked", "2016-08-03", "Overcooked is a chaotic couch co-op cooking game for one to four players. Working as a team, you and your fellow chefs must prepare, cook and serve up a variety of tasty orders before the baying customers storm out in a huff.", 3),
+	("B01J46T9WA", "Mini Metro", "2015-11-06", "Mini Metro is a strategy simulation game about designing a subway map for a growing city. Draw lines between stations and start your trains running. Keep your lines efficient by redrawing them as new stations open. Decide where to use your limited resources. How long can you keep the city moving?", 3);
+
+
+INSERT INTO Developer (DevID, DevName)
+VALUES
+	("D00001", "Stickhead Games"),
+	("D00002", "Concerned Ape"),
+	("D00003", "Ubisoft Montreal"),
+	("D00004", "Gameloft"),
+	("D00005", "Bioware"),
+	("D00009", "Bossa Studios"),
+	("D00010", "Pine Street Codeworks LLC"),
+	("D00011", "Ubisoft Annecy"),
+	("D00012", "Ubisoft Quebec"),
+	("D00013", "Ubisoft Ukraine"),
+	("D00014", "Ubisoft"),
+	("D00015", "Massive Entertainment"),
+	("D00016", "Ghost Town Games"),
+	("D00017", "Ubisoft Milan"),
+	("D00018", "Ubisoft Singapore");
+
+INSERT INTO Genre (GenreTypeID, GenreName)
+VALUES
+	("G001", "Puzzle"),
+	("G002", "Indie"),
+	("G003", "Strategy"),
+	("G004", "Action"),
+	("G005", "Adventure"),
+	("G007", "Sci-Fi"),
+	("G008", "RPG"),
+	("G009", "Simulation"),
+	("G010", "Open World"),
+	("G011", "Stealth"),
+	("G012", "Local Co-Op");
+
+INSERT INTO SysReq (SysReqID, SysReqName, SysReqType)
+VALUES
+	("S001", "Windows Vista", "OS"),
+	("S003", "500 MB", "Storage"),
+	("S004", "Mac OSX 10.9", "OS"),
+	("S006", "2500 MB", "Storage"),
+	("S008", "4 GB RAM", "Memory"),
+	("S010", "1 GB RAM", "Memory"),
+	("S011", "12 GB", "Storage"),
+	("S012", "8 GB", "Storage");
+
+INSERT INTO OutsideSite (ASIN, URL, GamePrice, SiteName)
+VALUES
+	("B0012AJ2KL", "http://store.steampowered.com/app/705500/Tiny_Bubbles/", NULL, "Steam"),
+	("B0010EK3SE", "http://store.steampowered.com/app/15100/Assassins_Creed_Directors_Cut_Edition/", 19.99, "Steam"),
+	("B0010EK3SE", "https://store.ubi.com/us/assassins-creed-directors-cut-edition/56c4947f88a7e300458b468e.html#start=2", 19.99, "Ubisoft Store"),
+	("B00140P9BA", "http://store.steampowered.com/app/17460/Mass_Effect/", 19.99, "Steam"),
+	("B00140P9BA", "https://www.origin.com/usa/en-us/store/mass-effect/mass-effect/standard-edition", 14.99, "Origin"),
+	("B00W24MHSA", "http://store.steampowered.com/app/327890/I_am_Bread/", 12.99, "Steam"),
+	("B01MU0ALK9", "http://store.steampowered.com/app/413150/Stardew_Valley/", 14.99, "Steam"),
+	("B0079NGSDO", "http://store.steampowered.com/app/208480/Assassins_Creed_III/", 19.99, "Steam"),
+	("B0079NGSDO", "https://www.origin.com/usa/en-us/store/assassins-creed/assassins-creed-iii/standard-edition", 19.99, "Origin"),
+	("B0079NGSDO", "https://store.ubi.com/us/assassins-creed-iii/56c4948088a7e300458b46a8.html", 19.99, "Ubisoft Store"),
+	("B0721NLC9L", "https://store.ubi.com/us/assassins-creed--origins/592450934e0165f46c8b4568.html#start=1", 59.99, "Ubisoft Store"),
+	("B0721NLC9L", "http://store.steampowered.com/app/582160/Assassins_Creed_Origins/", 59.99, "Steam"),
+	("B00ZPZQKIG", "https://www.origin.com/usa/en-us/store/mass-effect/mass-effect-andromeda/standard-edition#overview", 39.99, "Origin"),
+	("B01J46T9WA", "http://store.steampowered.com/app/287980/Mini_Metro/", 9.99, "Steam");
+
+INSERT INTO UserPerson (UserName, Passcode, CreationDate, FirstName, LastName, DOB, Email)
+VALUES
+	("ItsAMeMario", "Mu5hr00m", "2018-03-04", "Mario", "Plumber", "1981-07-09", "coingrabber31@gmail.com"),
+	("CmdrShepard", "N0rmandy5R2", "2018-04-02", "Alexa", "Shepard", "1994-04-11", "alexa_shepard@gmail.com"),
+	("TheGreenPlumber", "L0t50fC0in5", "2018-03-08", "Luigi", "Plumber", "1983-07-14", "othercoingrabber@gmail.com"),
+	("BestSniperEver", "IB3atSh3pard", "2018-04-05", "Garrus", "Vakarian", "1990-11-20", "turiansniper143@gmail.com");
+
+INSERT INTO Review (ReviewID, Rating, Comments, UserName, ASIN)
+VALUES
+	("R00001", 4, "Stardew Valley is probably one of my favorite games to sit down and spend 3 hours completely ignoring my responsibilities and depression. It's so relaxing and the characters are lovable and all have interesting stories and personalities. Stardew Valley will continue to be one of the few positive things in my life and I highly recommend this game to everyone and anyone.", "CmdrShepard", "B01MU0ALK9"),
+	("R00002", 5, "Nothing Is True. Everything Is Permitted. Assassin's Creed the first game in the series you are going to play as a legendary assassin. This game is very good as a 2007 game I enjoyed it because its and original Assassin's Creed game. Buy this if you don't have a monster pc this game can run on a 2004 pc", "BestSniperEver", "B0010EK3SE"),
+	("R00003", 4, "This game is about a bread going on a adventure to become a toasted bread. Control mechanic is difficult and challenging. Fun and funny.", "TheGreenPlumber", "B00W24MHSA");
+
+INSERT INTO WishList (UserName, ASIN)
+VALUES
+	("TheGreenPlumber", "B0010EK3SE"),
+	("CmdrShepard", "B00W24MHSA"),
+	("CmdrShepard", "B0012AJ2KL");
+
+INSERT INTO Friends (UserName, FUserName)
+VALUES
+	("ItsAMeMario", "TheGreenPlumber"),
+	("CmdrShepard", "BestSniperEver");
+
+INSERT INTO Owns (PurchaseDate, UserName, ASIN)
+VALUES
+	("2009-01-03", "CmdrShepard", "B00140P9BA"),
+	("2016-02-29", "CmdrShepard", "B01MU0ALK9"),
+	("2008-01-29", "BestSniperEver", "B0010EK3SE"),
+	("2016-05-25", "TheGreenPlumber", "B00W24MHSA"),
+	("2015-06-01", "ItsAMeMario", "B00W24MHSA");
+
+INSERT INTO Makes (DevID, ASIN)
+VALUES
+	("D00001", "B01MU0ALK9"),
+	("D00002", "B01MU0ALK9"),
+	("D00003", "B0010EK3SE"),
+	("D00004", "B0010EK3SE"),
+	("D00005", "B00140P9BA"),
+	("D00009", "B00W24MHSA"),
+	("D00010", "B0012AJ2KL"),
+	("D00003", "B0079NGSDO"),
+	("D00011", "B0079NGSDO"),
+	("D00012", "B0079NGSDO"),
+	("D00013", "B0079NGSDO"),
+	("D00003", "B0721NLC9L"),
+	("D00014", "B0721NLC9L"),
+	("D00011", "B0721NLC9L"),
+	("D00012", "B0721NLC9L"),
+	("D00013", "B0721NLC9L"),
+	("D00015", "B0721NLC9L"),
+	("D00005", "B00ZPZQKIG"),
+	("D00016", "B073TWYRZQ"),
+	("D00005", "B001VJ4DHK"),
+	("D00005", "B004FYKWZU"),
+	("D00017", "B00OAPODFY"),
+	("D00012", "B00OAPODFY"),
+	("D00013", "B00OAPODFY"),
+	("D00014", "B00OAPODFY"),
+	("D00003", "B00OAPODFY"),
+	("D00003", "B00BMFIXZG"),
+	("D00018", "B00BMFIXZG"),
+	("D00011", "B00BMFIXZG"),
+	("D00012", "B00BMFIXZG"),
+	("D00013", "B00BMFIXZG"),
+	("D00003", "B003L8DXS4"),
+	("D00013", "B003L8DXS4"),
+	("D00003", "B001TOQ8R0"),
+	("D00013", "B001TOQ8R0"),
+	("D00003", "B002I0IHIM"),
+	("D00015", "B002I0IHIM"),
+	("D00011", "B002I0IHIM"),
+	("D00012", "B002I0IHIM"),
+	("D00013", "B002I0IHIM");
+
+INSERT INTO Requires (ASIN, SysReqId)
+VALUES
+	("B01MU0ALK9", "S001"),
+	("B01MU0ALK9", "S003"),
+	("B01MU0ALK9", "S004"),
+	("B00W24MHSA", "S006"),
+	("B00140P9BA", "S010"),
+	("B0010EK3SE", "S001"),
+	("B0010EK3SE", "S012"),
+	("B00140P9BA", "S011");
+
+INSERT INTO PartOf (ASIN, GenreTypeID)
+VALUES
+	("B01MU0ALK9", "G009"),
+	("B01MU0ALK9", "G008"),
+	("B00W24MHSA", "G009"),
+	("B00140P9BA", "G004"),
+	("B00140P9BA", "G007"),
+	("B00140P9BA", "G008"),
+	("B0010EK3SE", "G004"),
+	("B0010EK3SE", "G005"),
+	("B0010EK3SE", "G007"),
+	("B0012AJ2KL", "G001"),
+	("B0012AJ2KL", "G002"),
+	("B0079NGSDO", "G004"),
+	("B0079NGSDO", "G005"),
+	("B0079NGSDO", "G010"),
+	("B00OAPODFY", "G010"),
+	("B00OAPODFY", "G011"),
+	("B00OAPODFY", "G004"),
+	("B00BMFIXZG", "G004"),
+	("B00BMFIXZG", "G005"),
+	("B00BMFIXZG", "G010"),
+	("B00BMFIXZG", "G011"),
+	("B0721NLC9L", "G004"),
+	("B0721NLC9L", "G010"),
+	("B0721NLC9L", "G011"),
+	("B003L8DXS4", "G004"),
+	("B003L8DXS4", "G005"),
+	("B003L8DXS4", "G010"),
+	("B001TOQ8R0", "G004"),
+	("B001TOQ8R0", "G005"),
+	("B001TOQ8R0", "G010"),
+	("B001TOQ8R0", "G007"),
+	("B002I0IHIM", "G004"),
+	("B002I0IHIM", "G005"),
+	("B002I0IHIM", "G010"),
+	("B002I0IHIM", "G008"),
+	("B001VJ4DHK", "G007"),
+	("B001VJ4DHK", "G008"),
+	("B001VJ4DHK", "G004"),
+	("B004FYKWZU", "G004"),
+	("B004FYKWZU", "G008"),
+	("B004FYKWZU", "G007"),
+	("B00ZPZQKIG", "G004"),
+	("B00ZPZQKIG", "G008"),
+	("B00ZPZQKIG", "G007"),
+	("B00000K4MC", "G009"),
+	("B00000K4MC", "G003"),
+	("B01302P4MA", "G002"),
+	("B073TWYRZQ", "G012"),
+	("B01J46T9WA", "G001"),
+	("B01J46T9WA", "G002"),
+	("B01J46T9WA", "G003"),
+	("B01J46T9WA", "G009");

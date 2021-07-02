@@ -1,0 +1,63 @@
+-- Allows user to search by Genre in GUI
+SELECT v.ASIN
+FROM dbo.VideoGame v, dbo.PartOf p, dbo.Genre g
+WHERE v.ASIN = p.ASIN and
+      p.GenreTypeID = g.GenreTypeID and
+      g.GenreName LIKE ?;
+
+
+-- Allows user to search by developer in GUI
+SELECT v.ASIN
+FROM dbo.VideoGame v, dbo.Developer d, dbo.Makes m
+WHERE d.DevID = m.DevID and
+      m.ASIN = v.ASIN and
+      d.DevName LIKE ?;
+
+-- Allows user to search by the outside site name
+SELECT v.ASIN
+FROM dbo.VideoGame v, dbo.outsidesite os
+WHERE v.ASIN = os.ASIN and
+               os.SiteName LIKE ?;
+
+-- Grabs all the reviews for the chosen video game
+SELECT r.Rating, r.Comments 
+FROM dbo.Review r 
+WHERE r.asin LIKE ?;
+
+-- Grabs all the video game infomation for the selected video game title
+SELECT v.ASIN, v.Title, v.Agesuggestion, v.ReleaseDate,v.Summary 
+FROM dbo.VideoGame v 
+WHERE v.Title LIKE ?;
+
+-- Gets the outside site for the video game that the user selects
+SELECT os.url, os.SiteName, os.GamePrice 
+FROM dbo.OutsideSite os 
+WHERE os.ASIN LIKE ?;
+
+-- ADDITIONAL QUERIES WE DID NOT USE IN THE GUI:
+
+-- Allows user to search by another/friends username
+SELECT u.Username
+FROM dbo.UserPerson u
+WHERE u.Username LIKE ?;
+
+-- Displays available games based on the users operating system
+SELECT v.Title, s.SysReqName
+FROM dbo.VideoGame v, dbo.SysReq s, dbo.Requires r
+WHERE r.ASIN = v.ASIN and
+      r.SysReqID = s.SysReqID and
+      s.SysReqName LIKE ?;
+
+-- Displays the video games that the user currently has on their wishlis
+SELECT v.Title
+FROM dbo.UserPerson u, dbo.WishList w, dbo.VideoGame v
+WHERE w.Username = u.Username and
+      u.Username LIKE ? and
+      v.ASIN = w.ASIN;
+
+
+-- Used for displaying the users friends list
+SELECT f.FUserName
+FROM dbo.Friends f, dbo.UserPerson u
+WHERE u.Username = f.Username and
+      u.Username LIKE ?;

@@ -1,0 +1,102 @@
+CREATE TABLE UserPerson (
+    Username VARCHAR(32) PRIMARY KEY,
+    Passcode VARCHAR(254) NOT NULL,
+    CreationDate DATE NOT NULL,
+    FirstName VARCHAR(64) NOT NULL,
+    LastName VARCHAR (64) NOT NULL,
+    DOB DATE NOT NULL,
+    Email VARCHAR(254) UNIQUE NOT NULL,
+    CONSTRAINT PassLength CHECK (LEN(Passcode)>=8)
+);
+
+CREATE TABLE VideoGame (
+    ASIN VARCHAR(10) PRIMARY KEY,
+    Title VARCHAR(64) NOT NULL,
+    ReleaseDate DATE DEFAULT('1/1/1970'),
+    Summary VARCHAR(1024),
+    AgeSuggestion INT DEFAULT(0),
+    CONSTRAINT ReleaseDt CHECK (ReleaseDate >= '1/1/1970')	
+);
+
+CREATE TABLE OutsideSite (
+    ASIN VARCHAR(10) NOT NULL,
+    URL VARCHAR(100) UNIQUE,
+    GamePrice REAL,
+    SiteName VARCHAR(20) NOT NULL,
+    FOREIGN KEY (ASIN) REFERENCES VideoGame (ASIN),
+    CONSTRAINT Price CHECK (GamePrice >= -1)
+);
+
+CREATE TABLE WishList (
+    Username VARCHAR(32) NOT NULL,
+    ASIN VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Username) REFERENCES UserPerson (Username),
+    FOREIGN KEY (ASIN) REFERENCES VideoGame (ASIN)
+);
+
+Create TABLE Owns (
+    PurchaseDate DATE NOT NULL,
+    Username VARCHAR(32) NOT NULL,
+    ASIN VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Username) REFERENCES UserPerson (Username),
+    FOREIGN KEY (ASIN) REFERENCES VideoGame (ASIN)
+);
+
+
+CREATE TABLE SysReq (
+    SysReqID CHAR(4) PRIMARY KEY,
+    SysReqName VARCHAR(32) NOT NULL,
+    SysReqType VARCHAR(32) NOT NULL
+);
+
+CREATE TABLE Requires (
+    ASIN VARCHAR(10) NOT NULL,
+    SysReqID CHAR(4) NOT NULL,
+    FOREIGN KEY (ASIN) REFERENCES VideoGame (ASIN),
+    FOREIGN KEY (SysReqID) REFERENCES SysReq (SysReqID)
+);
+
+CREATE TABLE Review (
+    ReviewID VARCHAR(10) PRIMARY KEY,
+    Rating INT NOT NULL,
+    Comments VARCHAR(1024),
+    Username VARCHAR(32) NOT NULL,
+    ASIN VARCHAR(10) NOT NULL,
+    FOREIGN KEY (Username) REFERENCES UserPerson (Username),
+    FOREIGN KEY (ASIN) REFERENCES VideoGame (ASIN),
+    CONSTRAINT Bad_Rate CHECK (Rating >= 1 AND Rating <= 5)
+);
+
+CREATE TABLE Genre (
+    GenreTypeID CHAR(4) NOT NULL,
+    GenreName VARCHAR(32)NOT NULL,
+    PRIMARY KEY (GenreTypeID)
+);
+
+CREATE TABLE PartOf (
+    ASIN VARCHAR(10) NOT NULL,
+    GenreTypeID CHAR(4) NOT NULL,
+    FOREIGN KEY (ASIN) REFERENCES VideoGame (ASIN),
+    FOREIGN KEY (GenreTypeID) REFERENCES Genre (GenreTypeID)
+);
+
+CREATE TABLE Friends (
+    Username VARCHAR(32) NOT NULL,
+    FUserName VARCHAR(32) NOT NULL,
+    FOREIGN KEY (Username) REFERENCES UserPerson (Username),
+    FOREIGN KEY (FUserName) REFERENCES UserPerson (Username),
+    CHECK (Username NOT LIKE FUserName)
+);
+
+CREATE TABLE Developer (
+    DevID CHAR(6) NOT NULL,
+    DevName VARCHAR(32) NOT NULL,
+    PRIMARY KEY (DevID)
+);
+
+CREATE TABLE Makes (
+    ASIN VARCHAR(10) NOT NULL,
+    DevID CHAR(6) NOT NULL,
+    FOREIGN KEY (ASIN) REFERENCES VideoGame (ASIN),
+    FOREIGN KEY (DevID) REFERENCES Developer (DevID)
+);
